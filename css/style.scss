@@ -1,0 +1,97 @@
+$colors: (
+    'whitish-color': #F7F7F7,
+    'bluish-color': #2980B9,
+    'redish-color': #E74C3C,
+    'white': #FFF,
+    'grey': #808080
+);
+
+body {
+    background: #2BC0E4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #EAECC6, #2BC0E4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EAECC6, #2BC0E4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+#container {
+    background-color: map-get($colors, 'whitish-color');
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    margin: 100px auto;
+    width: 320px;
+
+    h1 {
+        background-color: map-get($colors, 'bluish-color');
+        color: map-get($colors, 'white');
+        font-size: 24px;
+        font-weight: medium;
+        margin: 0;
+        padding: 10px 20px;
+
+        i {
+            float: right;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    input[type="text"] {
+        background-color: map-get($colors, 'whitish-color');
+        border: 1.5px solid rgba(0, 0, 0, 0);
+        border-bottom: 1.5px solid map-get($colors, 'bluish-color');
+        box-sizing: border-box;
+        color: map-get($colors, 'bluish-color');
+        font-size: 18px;
+        padding: 13px 13px 13px 20px;
+        width: 100%;
+
+        &:focus {
+            background-color: map-get($colors, 'white');
+            border: 3px solid map-get($colors, 'bluish-color');
+            border-top: none;
+            outline: none;
+        }
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            background-color: map-get($colors, 'white');
+            height: 40px;
+            line-height: 40px;
+            
+            &:nth-child(even) {
+                background-color: map-get($colors, 'whitish-color');
+            }
+            &:hover {
+                cursor: pointer;
+
+                span {
+                    opacity: 1;
+                    width: 40px;
+                }
+            }
+            span {
+                background-color: map-get($colors, 'redish-color');
+                color: map-get($colors, 'white');
+                display: inline-block;
+                height: 40px;
+                margin-right: 20px;
+                text-align: center;
+                opacity: 0;
+                width: 0;
+                transition: 250ms all linear;
+            }
+        }
+    }
+}
+li {
+    color: #666;
+}
+.done {
+    color: map-get($colors, 'grey');
+    text-decoration: line-through;
+}
